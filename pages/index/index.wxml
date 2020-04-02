@@ -5,8 +5,8 @@
 <view id="temp">{{temp}}℃</view>
 <view id="weather">{{temperature}}</view>
 <view id="weather">{{weather}}</view>
-<view id="city">{{city}}</view>
 <view id="wind">{{wind}}</view>
 <view id="week">{{week}}</view>
+<view id="city">{{city}}</view>
 </view>
 </view>

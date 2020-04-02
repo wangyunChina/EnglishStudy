@@ -29,7 +29,6 @@ Page({
         that.setData({ temp:data.temp_curr });
         that.setData({temperature:data.temperature});
         that.setData({ weather: data.weather});
-        that.setData({city:data.citynm});
         that.setData({ week: data.week});
         that.setData({ wind: data.wind});
       }
@@ -69,7 +68,9 @@ Page({
               var reg = new RegExp('自治县', 'gi');
               city = city.replace(reg, '');
               console.log(city);
-              that.setData({ cid: city})
+              that.setData({ cid: city});
+              that.setData({ city: res.result.address_component.city +res.result.address_component.district})
+
               that.getWeather(city);
               console.log(res, 'success')
 
