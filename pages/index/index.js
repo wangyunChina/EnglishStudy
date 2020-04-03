@@ -77,38 +77,7 @@ Page({
               console.log(res, 'success')
 
             },
-            fail: function () {
-              wx.hideLoading();
-              console.log("获取位置失败！");
-              wx.getSetting({
-                success: function (res) {
-                  if (!res.authSetting['scope.userLocation']) {
-                    that.showModal({
-                      title: '',
-                      content: '请允许****获取您的定位',
-                      confirmText: '授权',
-                      success: function (res) {
-                        if (res.confirm) {
-
-                          that.openSetting();
-                        } else {
-                          console.log('get location fail');
-                        }
-                      }
-                    })
-                  } else {
-                    //用户已授权，但是获取地理位置失败，提示用户去系统设置中打开定位
-                    that.showModal({
-                      title: '',
-                      content: '请在系统设置中打开定位服务',
-                      confirmText: '确定',
-                      success: function (res) {
-                      }
-                    })
-                  }
-                }
-              })
-            }
+            
 
       
           
@@ -121,7 +90,41 @@ Page({
        
 
       },
-    })
+      fail: function () {
+       
+        wx.getSetting({
+          success: function (res) {
+            if (!res.authSetting['scope.userLocation']) {
+              wx.showModal({
+                title: '',
+                content: '请允许****获取您的定位',
+                confirmText: '授权',
+                success: function (res) {
+                  if (res.confirm) {
+
+                    that.openSetting();
+                  } else {
+                    console.log('get location fail');
+                  }
+                }
+              })
+            } else {
+              //用户已授权，但是获取地理位置失败，提示用户去系统设置中打开定位
+              wx.showModal({
+                title: '',
+                content: '请在系统设置中打开定位服务',
+                confirmText: '确定',
+                success: function (e) {
+                  
+                }
+              })
+            }
+          }
+        })
+      }
+    }
+    
+    )
 
 
 
