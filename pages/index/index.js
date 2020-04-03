@@ -114,8 +114,10 @@ Page({
                 title: '',
                 content: '请在系统设置中打开定位服务',
                 confirmText: '确定',
-                success: function (e) {
-                  
+                success: function (res) {
+                  wx.reLaunch({
+                    url: '../index/index'
+                  })
                 }
               })
             }
