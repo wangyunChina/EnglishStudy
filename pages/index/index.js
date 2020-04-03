@@ -35,15 +35,17 @@ Page({
     })
   },
   
-  onLoad:function(){
+  onShow:function(){
     var that=this;
     qqmapsdk = new QQMapWX({
 
       key: 'RPIBZ-X7IL4-BTUUB-DY3OS-S2SFF-TCFS4'
 
     });
+    console.log("开始获取位置！");
     wx.getLocation({
       success: function(res) {
+        console.log("定位成功！");
         console.log(res);
         var longitude = res.longitude;
         var latitude = res.latitude;
@@ -77,7 +79,7 @@ Page({
             },
             fail: function () {
               wx.hideLoading();
-
+              console.log("获取位置失败！");
               wx.getSetting({
                 success: function (res) {
                   if (!res.authSetting['scope.userLocation']) {
