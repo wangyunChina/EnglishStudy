@@ -1,7 +1,10 @@
 {
   "pages": ["pages/index/index",
     "pages/user/user",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/template/template",
+    "pages/bookchair/bookchair",
+    "pages/study/study"
   ],
 "permission": {
   "scope.userLocation": {
@@ -11,7 +14,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#399",
-    "navigationBarTitleText": "中国天气网",
+    "navigationBarTitleText": "英语学霸吧",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -22,17 +25,23 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath":"pages/icon/home.png",
+        "selectedIconPath":"pages/icon/home.png"
       },
       {
         
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "pagePath": "pages/bookchair/bookchair",
+        "text": "书架",
+        "iconPath": "pages/icon/books.png",
+        "selectedIconPath": "pages/icon/books.png"
       },
       {
        
         "pagePath": "pages/user/user",
-        "text": "个人中心"
+        "text": "个人中心",
+        "iconPath": "pages/icon/user.png",
+        "selectedIconPath": "pages/icon/user.png"
       }
     ]
   },

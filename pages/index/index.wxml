@@ -1,13 +1,35 @@
 
-<view class="content">
+<view class="head-content">
 <image class='background' src="../img/tianqi.jpg" mode="aspectFill"></image>
-<view class="body">
-<view id="temp">{{temp}}℃</view>
-<view id="weather">{{temperature}}</view>
-<view id="weather">{{weather}}</view>
-<view id="wind">{{wind}}</view>
-<view id="week">{{week}}</view>
-<view id="city">{{city}}</view>
+  <view class="left-temperature">{{temp}}℃</view>
+  <view class="mid-content">
+    <view class="top-location">{{cid}}</view>
+    <view class="down-weather">{{temperature}}</view>
+  </view>
+  <view class="right-weather">{{weather}}</view>
 </view>
+<view class="search-block">
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="请输入想要的单词"/>
+                </view>
+            </view>
+            <!-- 搜索按钮,调用搜索查询方法 -->
+            <view class="weui-search-bar__cancel-btn" bindtap='search-word'>搜索</view>
+        </view>
+    </view>
+</view>
+<import src="../template/template.wxml"/>
+<view class="hr"></view>
+<view class="scroll-p">
+  <scroll-view scroll-y="ture" class="scroll">
+  <block wx:for="{{array}}">
+  <template is="item" data="{{item}}"></template>
+  </block>
+  </scroll-view>
 </view>
 

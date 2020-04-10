@@ -1,0 +1,22 @@
+<template name="item">
+<view class="item" wx:if="{{item.status}}">
+  <view class="src"> <image src="{{item.src}}" class="img"></image></view>
+  <view class="mid"> 
+    <view class="title">
+    {{item.title}} 
+    </view>
+    <view class="count">  
+       <view class="type">{{item.now}}/{{item.total}}  </view>
+    </view>
+  </view>
+  <view class="right" bindtap="addIntoPlan" data-item="{{item}}">
+      <view class="icon" wx:if="{{item.status}}"> 
+      <image src="../icon/plus.png" class="img" style="width:40px;      height:40px" />
+      </view>
+      <view class="icon" wx:if="{{!item.status}}"> 
+      <image src="../icon/plus-1.png" class="img" style="width:40px;      height:40px" />
+      </view>
+    <view class="desc">{{item.desc}}</view>
+  </view>
+</view>
+</template>

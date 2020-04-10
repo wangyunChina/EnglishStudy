@@ -13,6 +13,15 @@ Page({
     wind: "",
     select:false,
     cid:null,
+    array:[
+      {index:1, title:"英语四级",now:"0",total:"3245",status:"true",desc:"添加学习",src:"../img/siji.jpg"},
+      {index: 2, title: "英语六级", now: "0", total: "3245", status: "true", desc: "添加学习",src:"../img/liuji.jpg" },
+      { index: 3,title: "雅思", now: "0", total: "3245", status: "true", desc: "添加学习",src:"../img/yasi.jpg" },
+      { index: 4,title: "托福", now: "0", total: "3245", status: "true", desc: "添加学习",src:"../img/tuofu.jpg" },
+      { index: 5,title: "高考英语", now: "0", total: "3245", status: "true", desc: "添加学习",src:"../img/gaokao.jpg" },
+      { index: 6,title: "中考英语", now: "0", total: "3245", status: "true", desc: "添加学习",src:"../img/zhongkao.jpg" },
+      { index: 7,title: "小学英语", now: "0", total: "3245", status: "true", desc: "添加学习",src:"../img/xiaoxue.jpg" },
+    ]
   },
   getWeather:function(cid){
     var that=this;
@@ -134,6 +143,20 @@ Page({
   clikme:function(){
     console.log("clik me");
   },
+  addIntoPlan:function(e) {
+    console.log(e);
+    var item=e.currentTarget.dataset.item;
+    if (item.status == "true") {
+      
+      
+      item.status = false;
+      item.desc = "已加入";
+      
+    }
+   
+    this.data.array[item.index-1]=item;
+    this.setData({ array:this.data.array });
+  }
   
 
 

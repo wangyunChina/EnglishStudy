@@ -1,3 +1,8 @@
+@import "../template/template.wxss";
+.body{
+  height: 100%;
+  width: 100%;
+}
 .content{
 font-family: "微软雅黑，宋体";
 font-size: 14px;
@@ -8,17 +13,12 @@ color: #333;
 }
 .background {
   width: 100%;
-  height: 100%;
+  height: 60px;
   position:fixed; 
   background-size:100% 100%;
   z-index: -1;
 }
-.body{
- 
-  height: 50%;
-  padding-top: 70rpx;
 
-}
 #temp{
   font-size: 80px;
   text-align: center;
@@ -53,4 +53,101 @@ height: 100rpx;
 text-align: center;
 font-size: 15px;
 color: rgb(28, 42, 224);
+}
+.head-content{
+  display: flex;
+  flex-direction: row;
+  height: 60rpx;
+}
+.left-temperature{
+  font-size: 40px;
+  color: white;
+}
+.mid-content{
+  
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 80px;
+  
+}
+.top-location{
+  color: white;
+}
+.down-weather{
+  color: rgb(0, 255, 234);
+  text-align: center;
+}
+.right-weather{
+  height: 40px;
+  width: 34%;
+  font-size: 20px;
+  color: rgb(0, 255, 234);
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.search-block{
+  margin-top: 32px;
+}
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EFEFF4;
+  border-top: 1rpx solid #D7D6DC;
+  border-bottom: 1rpx solid #D7D6DC;
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color: #09BB07;
+  white-space: nowrap;
+}
+.news-title{
+  margin-left:10px; 
+}
+.hr{
+  height: 5px;
+  width: 100%;
+  background-color: #ccc;
+  opacity: 0.8;
+}
+.scroll{
+  width:100%;
+    height:100%;
+}
+.scroll-p{
+width:100%;
+    height:100%;
+    overflow:hidden;
 }
